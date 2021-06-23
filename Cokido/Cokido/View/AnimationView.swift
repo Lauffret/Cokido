@@ -21,7 +21,7 @@ struct AnimationView: View {
                 Color(.white).ignoresSafeArea()
                 VStack(spacing: -20) {
                     Spacer()
-                    Text("COKIDO")
+                    Text("COKIDO").foregroundColor(.black)
                         .font(.system(size: 100, weight: .bold, design: .rounded))
                         .fontWeight(.bold)
                     
