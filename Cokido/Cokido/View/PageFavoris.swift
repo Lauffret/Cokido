@@ -14,8 +14,6 @@ struct PageFavoris: View {
     let grid = [GridItem(.adaptive(minimum: 200, maximum: 200))]
     
     @State private var rechercheText:String = ""
-    @State private var siRecherche = false
-    
     @State private var showModal : Bool = false
     @State private var inter : Bool = true
     @State private var exter : Bool = true
@@ -32,22 +30,8 @@ struct PageFavoris: View {
         
         NavigationView {
             ScrollView{
-                HStack {
-                    TextField("", text:$rechercheText)
-                        .padding()
-                        .padding(.horizontal)
-                        .background(Color(.systemGray5))
-                        .overlay(
-                            HStack{
-                                Image(systemName: "magnifyingglass")
-                                    .frame(minWidth: /*@START_MENU_TOKEN@*/0/*@END_MENU_TOKEN@*/, maxWidth: /*@START_MENU_TOKEN@*/.infinity/*@END_MENU_TOKEN@*/,alignment: .leading)
-                                    .padding(.leading)
-                                    .onTapGesture(perform:{
-                                                siRecherche = true})
-                            }
-                            .foregroundColor(.gray)
-                        )
-                }
+                Spacer()
+                SearchBarView(rechercheText: $rechercheText)
                 
                 LazyVGrid(columns: grid, spacing: 30) {
                     ForEach(data.activites.filter({$0.favori == true  && ($0.inter == inter || $0.exter == exter) && $0.prix <= prix && $0.duree <= Int(duree) && $0.nBPerso <= nBPerso && (rechercheText.isEmpty ? true : $0.titreActivite.contains(rechercheText))}))

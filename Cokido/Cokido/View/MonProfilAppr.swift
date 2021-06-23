@@ -7,127 +7,94 @@ struct MonProfilAppr: View {
     
     
     var profilApp : ProfilApprentissage
-        
+    
     var body: some View {
         
         NavigationView {
             
             ScrollView {
-                VStack(alignment: .leading) {
-                VStack(alignment: .leading) {
-                    Image(profilApp.image)
-                        .resizable().aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-                       .frame(width: 420, height: 120)
-                        .cornerRadius(20)
-                        .padding()
-                    
-                    Text("Ton profil dominant est : \(profilApp.type.rawValue)")
-                        .font(.title3)
-                        .fontWeight(.bold)
-                        .foregroundColor(Color.gray)
-                        .multilineTextAlignment(.center)
-                        .padding()
-                    
-                    Text("C'est quoi ça? ")
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.leading)
-                        .padding()
-                    Text(profilApp.cQC)
-                        .foregroundColor(Color.gray)
-                        .multilineTextAlignment(.leading)
-                        .padding()
-                        .frame(width: 400, height: 250)
-                    
-                    Text ("Conseils")
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.leading)
-                        .padding()
-                    Text(profilApp.conseil)
-                        .foregroundColor(Color.gray)
-                        .multilineTextAlignment(.leading)
-                        .padding()
-                        .frame(width: 400, height: 180)
-                    Image(profilApp.image2)
-                        .resizable()
-                        .padding(.leading)
-                        .frame(width: 400, height: 200)
-                        .cornerRadius(20).aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-
-                    Text("Pour savoir en plus...")
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.leading)
-                        .padding()
-                    Text(profilApp.pSP)
-                        .foregroundColor(Color.gray)
-                        .multilineTextAlignment(.leading)
-                        .padding()
-                        .frame(width: 400, height: 170)
-                    Text(profilApp.pSP2)
-                        .foregroundColor(Color.gray)
-                        .multilineTextAlignment(.leading)
-                        .padding()
-                        .frame(width: 400, height: 170)
-                }
-//alt vstack
-                    
+                Image(profilApp.image)
+                    .resizable().aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                    .frame(width: 420, height: 120)
+                
+                VStack{
                     VStack(alignment: .leading) {
                         
-                    if(!profilApp.pSP3.isEmpty){
-                        Text(profilApp.pSP3)
-                        .foregroundColor(Color.gray)
-                        .multilineTextAlignment(.leading)
-                        .padding()
-                        .frame(width: 400, height: 100)
-                    }
                         
-                        if(!profilApp.pSP4.isEmpty){
-                            Text(profilApp.pSP4)
-                                .foregroundColor(Color.gray)
-                                .multilineTextAlignment(.leading)
-                                .padding()
-                                .frame(width: 400, height: 100)
-                        }
+                        Text("Ton profil dominant est : \(profilApp.type.rawValue)")
+                            .font(.title3)
+                            .fontWeight(.bold)
+                            .foregroundColor(Color.gray)
+                            .padding()
                         
-                    Text(" Au niveau statistique")
-                        .fontWeight(.bold)
-                        .multilineTextAlignment(.leading)
-                        .padding()
-                        Text(profilApp.stat)
-                        .foregroundColor(Color.gray)
-                        .multilineTextAlignment(.leading)
-                        .padding()
-                        .frame(width: 400, height: 180)
-                    Image("cone")
+                        Text("C'est quoi ça? ")
+                            .fontWeight(.bold)
+                            .padding()
+                        
+                        Text(profilApp.cQC)
+                            .padding().background(Rectangle().foregroundColor(Color("OrangeCokido")).cornerRadius(20).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)).padding()
+                        
+                        Text ("Conseils")
+                            .fontWeight(.bold)
+                            .padding()
+                        
+                        Text(profilApp.conseil)
+                            .padding().background(Rectangle().foregroundColor(Color("OrangeCokido")).cornerRadius(20).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)).padding()
+                    }.padding()
+                    
+                    Image(profilApp.image2)
                         .resizable()
-                        .padding(.leading)
-                        .padding()
-                        .frame(width: 400, height: 300)
-                        .cornerRadius(20).aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
-
+                        .frame(width: 400, height: 200).aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/).cornerRadius(20)
+                    
+                    VStack(alignment: .leading){
+                        
+                        
+                        Text("Pour savoir en plus...").fontWeight(.bold)
+                            .padding()
+                        
+                        
+                        Text(profilApp.pSP)
+                            .padding().background(Rectangle().foregroundColor(Color("OrangeCokido")).cornerRadius(20).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)).padding()
+                        
+                        Text(profilApp.pSP2)
+                            .padding().background(Rectangle().foregroundColor(Color("OrangeCokido")).cornerRadius(20).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)).padding()
+                        
+                        
+                        Text(" Au niveau statistique")
+                            .fontWeight(.bold)
+                            .padding()
+                        Text(profilApp.stat)
+                            .padding().background(Rectangle().foregroundColor(Color("OrangeCokido")).cornerRadius(20).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)).padding()
+                        
+                        
+                        
+                        
+                    }.padding()
+                    
+                    Image("conedale")
+                        .resizable().aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                        .frame(width: 310, height: 310).padding()
                     
                     
-                    }
-                    
-                }
+                }.padding()
             }.navigationTitle("Mon profil d'apprentissage").navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(trailing:Button(action: {
                 retour.toggle()
                 
             })
             {
-
+                
                 Image(systemName:"gobackward")
                     .font(.title)
-                               .padding()
-                               .foregroundColor(.blue)
-                            
+                    .padding()
+                    .foregroundColor(.blue)
+                
             })
         }
     }
 }
-
 struct MonProfilAppr_Previews: PreviewProvider {
     static var previews: some View {
-        MonProfilAppr(retour: .constant(false), profilApp: kine)
+        MonProfilAppr(retour: .constant(false), profilApp: audi)
     }
 }

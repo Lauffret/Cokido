@@ -21,14 +21,13 @@ struct Filtre: View {
                 HStack{// toogle exter
                     Toggle(isOn: $inter) {
                         Text("Intérieur")
-                    }
+                    }.toggleStyle(SwitchToggleStyle(tint: Color("VertCokido")))
                     
                 }
                 
+                
                 HStack{ // toogle exter
-                    Toggle(isOn: $exter) {
-                        Text("Extérieur")
-                    }
+                    Toggle("Extérieur", isOn: $exter).toggleStyle(SwitchToggleStyle(tint: Color("VertCokido")))
                 }
                 
                 Text("Matériel")
@@ -44,7 +43,7 @@ struct Filtre: View {
                 Text("Prix")
 
                 HStack{// slider prix
-                    Slider(value: $prix, in: 0...100, step: 0.5)
+                    Slider(value: $prix, in: 0...100, step: 0.5).accentColor(Color("BleuCokido"))
                     Text("max. \(String(format: "%.02f",prix)) €")
                 }
                 
@@ -52,7 +51,7 @@ struct Filtre: View {
                 HStack{// slider duree
                     let heure = Int(duree) / 60
                     let minute = Int((duree / 60.0 - Double (Int( duree / 60.0))) * 60 )
-                    Slider(value: $duree, in: 0...500, step: 10)
+                    Slider(value: $duree, in: 0...500, step: 10).accentColor(Color("BleuCokido"))
                     if(duree < 60.0){
                         Text("max. \(Int(duree))  min")
                     }else{
@@ -72,7 +71,7 @@ struct Filtre: View {
             }), trailing: Button(action: {dismiss.toggle()} , label: {
                 Text("Valider")
             }) ).navigationBarTitle(Text("Filtre")).navigationBarTitleDisplayMode(.inline)
-        }
+        }.accentColor(Color("BleuCokido"))
     }
 }
 
