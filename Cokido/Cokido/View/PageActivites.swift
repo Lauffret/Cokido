@@ -34,7 +34,8 @@ var body: some View {
                         NavigationLink(
                             destination: PageDetailActivite(activite: activite),
                             label: {
-                                activiteRow(activite: activite)
+                                activiteRow(activite: activite).accentColor(.black)
+                                
                             })
                     }
                     

@@ -36,7 +36,7 @@ struct ProfileLearnRow: View {
                         Spacer()
                     
                     
-                    ProgressView(value: Double(data.activites.filter({$0.faite && $0.type == profilType}).count )/Double( data.activites.filter({$0.type == profilType}).count )).accentColor(Color("RougeCokido"))
+                    ProgressView(value: Double(data.activites.filter({$0.faite && $0.type == profilType}).count )/Double( data.activites.filter({$0.type == profilType}).count )).accentColor(Color("RougeCokido")).frame(width: 150, height: 10, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
                         .padding()
 
                                 }

@@ -27,7 +27,7 @@ struct tabViewCokido: View {
             
             PageCompte(profil: utilisateur, tabSelection: $tabSelection).tabItem { Image(systemName: "person")
                 Text("Compte") }.tag(3)
-        }
+        }.accentColor(Color("BleuCokido"))
     }
 }
 

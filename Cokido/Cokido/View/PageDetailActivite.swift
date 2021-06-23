@@ -12,8 +12,9 @@ struct PageDetailActivite: View {
     @EnvironmentObject var data: Data
     
     @State var activite: Activite
+    @State var feedback : Bool = false
     
-    @State var endroit:String="PROBLEME"
+    @State var endroit:String = "PROBLEME"
     @State private var showingFavAlert = false // modale favori coché, décoché
     
     var activiteIndex: Int {
@@ -64,7 +65,7 @@ struct PageDetailActivite: View {
                     Text("\(activite.description)")
                         .padding(.all)
                     Spacer()
-                }.padding().background(Rectangle().foregroundColor(Color("VertCokido")).cornerRadius(20).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)).padding()
+                }.padding()
                 
                 
                 //            Matériel nécessaire
@@ -130,20 +131,19 @@ struct PageDetailActivite: View {
                         Text("\(activite.apprentissage)")
                             .padding([.leading, .bottom, .trailing])
                         Spacer()
-                    }.padding().background(Rectangle().cornerRadius(20).foregroundColor(Color("OrangeCokido")).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)).padding()
+                    }.padding()
                 }               // Bouton
                 
-                NavigationLink(
-                    destination: PageFeedback(),
-                    label: {
-                        Text("Noter mes obervations")
-                            .padding()
-                            .foregroundColor(.white)
-                            .background(Color("BleuCokido"))
-                            .cornerRadius(10)
-                    }).navigationTitle(Text("\(activite.titreActivite)")).navigationBarTitleDisplayMode(.inline)
+                Button(action: {feedback.toggle()}, label: {
+                    Text("Noter mes obervations")
+                        .padding()
+                        .foregroundColor(.white)
+                        .background(Color("BleuCokido"))
+                        .cornerRadius(10)
+                }).sheet(isPresented: $feedback, content: {
+                            PageFeedback(didTap: $feedback)}).navigationTitle(Text("\(activite.titreActivite)")).navigationBarTitleDisplayMode(.inline)
                 
-                // NavigationLink - Fin
+                // Button - Fin
             }
             .onAppear{
                 endroitString()
@@ -167,6 +167,6 @@ struct PageDetailActivite: View {
 
 struct PageDetailActivite_Previews: PreviewProvider {
     static var previews: some View {
-        PageDetailActivite(activite: Data().activites[0])
+        PageDetailActivite(activite: Data().activites[0]).environmentObject(Data())
     }
 }

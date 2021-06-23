@@ -42,9 +42,15 @@ struct MonProfilAppr: View {
                             .padding().background(Rectangle().foregroundColor(Color("OrangeCokido")).cornerRadius(20).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)).padding()
                     }.padding()
                     
-                    Image(profilApp.image2)
-                        .resizable()
-                        .frame(width: 400, height: 200).aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/).cornerRadius(20)
+                    if(profilApp.type == Type.Visuel){
+                        Image(profilApp.image2)
+                            .resizable()
+                            .frame(width: 450, height: 200).aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                    }else{
+                        Image(profilApp.image2)
+                            .resizable()
+                            .frame(width: 400, height: 250).aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                    }
                     
                     VStack(alignment: .leading){
                         
@@ -84,10 +90,10 @@ struct MonProfilAppr: View {
             })
             {
                 
-                Image(systemName:"gobackward")
+                Image(systemName:"xmark")
                     .font(.title)
                     .padding()
-                    .foregroundColor(.blue)
+                    .foregroundColor(Color("BleuCokido"))
                 
             })
         }

@@ -70,7 +70,7 @@ struct PageCompte: View {
                                     Text(" 3 h  en activités Kinethésique").padding(2)
                                     Text(" 0 min  en activités Audif").padding(2)
                                 }.frame(width: 350, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding()
-                                .background(Rectangle().foregroundColor(Color("OrangeCokido")).cornerRadius(20).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)).padding()
+                                .background(Rectangle().foregroundColor(Color("VertCokido")).cornerRadius(20).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)).padding()
                                 
                                 
                                 // LineChart

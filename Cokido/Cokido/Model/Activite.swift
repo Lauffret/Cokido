@@ -28,7 +28,7 @@ struct Activite : Identifiable{
     var type : Type // enum liste fermé
     var prix : Double
     var nBPerso : Int
-    var feedback: [Feedback]
+    var feedback: [Feedback ]
 
 }
 
