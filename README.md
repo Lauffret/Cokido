@@ -15,6 +15,7 @@ Project crée avec :
 Une petite introduction à propos de l'instalation.
 ```
 $ git clone git@gitlab.com:Lauffret/cokido.git
-$ cd ../cokido
+$ cd ../Cokido
+$ open Cokido.xcodeproj
 
 ```
