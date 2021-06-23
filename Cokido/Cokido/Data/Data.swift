@@ -9,8 +9,10 @@ import Foundation
 import SwiftUI
 import SwiftUICharts
 
-var activites: [Activite] = [ pateADessiner, feuillesFantomes, respiration, papillons, cocoColore , sylRig, flotteCoule ]
 
+final class Data:ObservableObject {
+    @Published var activites: [Activite] = [ pateADessiner, feuillesFantomes, respiration, papillons, cocoColore , sylRig, flotteCoule ]
+}
 
 var pateADessiner = Activite(
     imageActivite: "pateADessiner",

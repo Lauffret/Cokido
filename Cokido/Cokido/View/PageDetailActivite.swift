@@ -8,10 +8,18 @@
 import SwiftUI
 
 struct PageDetailActivite: View {
+    
+    @EnvironmentObject var data: Data
+    
     @State var activite: Activite
     
     @State var endroit:String="PROBLEME"
     @State private var showingFavAlert = false // modale favori coché, décoché
+    
+    var activiteIndex: Int {
+            data.activites.firstIndex(where: { $0.id == activite.id })!
+        }
+    
     
     var body: some View {
         ScrollView{
@@ -41,9 +49,9 @@ struct PageDetailActivite: View {
                 HStack{
                     Spacer()
                     Button(action: {
-                        activite.favori.toggle()
+                        data.activites[activiteIndex].favori.toggle()
                     }, label: {
-                        Image(systemName: "\(activite.favori ? "star.fill" : "star")")
+                        Image(systemName: "\(data.activites[activiteIndex].favori ? "star.fill" : "star")")
                             .padding(.trailing)
                             .multilineTextAlignment(.trailing)
                             .foregroundColor(Color("BleuCokido"))
@@ -159,6 +167,6 @@ struct PageDetailActivite: View {
 
 struct PageDetailActivite_Previews: PreviewProvider {
     static var previews: some View {
-        PageDetailActivite(activite: activites[0])
+        PageDetailActivite(activite: Data().activites[0])
     }
 }

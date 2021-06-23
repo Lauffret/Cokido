@@ -9,6 +9,8 @@ import SwiftUI
 
 struct PageFavoris: View {
     
+    @EnvironmentObject var  data: Data
+    
     let grid = [GridItem(.adaptive(minimum: 200, maximum: 200))]
     
     @State private var rechercheText:String = ""
@@ -48,7 +50,7 @@ struct PageFavoris: View {
                 }
                 
                 LazyVGrid(columns: grid, spacing: 30) {
-                    ForEach(activites.filter({$0.favori == true  && ($0.inter == inter || $0.exter == exter) && $0.prix <= prix && $0.duree <= Int(duree) && $0.nBPerso <= nBPerso && (rechercheText.isEmpty ? true : $0.titreActivite.contains(rechercheText))}))
+                    ForEach(data.activites.filter({$0.favori == true  && ($0.inter == inter || $0.exter == exter) && $0.prix <= prix && $0.duree <= Int(duree) && $0.nBPerso <= nBPerso && (rechercheText.isEmpty ? true : $0.titreActivite.contains(rechercheText))}))
                 {activite in
                         NavigationLink(
                             destination: PageDetailActivite(activite: activite),
@@ -78,7 +80,7 @@ struct PageFavoris: View {
 
 struct PageFavoris_Previews: PreviewProvider {
     static var previews: some View {
-        PageFavoris(tabSelection: .constant(2))
+        PageFavoris(tabSelection: .constant(2)).environmentObject(Data())
     }
 }
 

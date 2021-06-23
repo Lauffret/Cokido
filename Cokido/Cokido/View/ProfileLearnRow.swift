@@ -18,7 +18,8 @@ struct activityView : View {
 
 struct ProfileLearnRow: View {
 
-
+    @EnvironmentObject var data: Data
+    
     let profilType:Type
 
     var body: some View {
@@ -35,7 +36,7 @@ struct ProfileLearnRow: View {
                         Spacer()
                     
                     
-                    ProgressView(value: Double(activites.filter({$0.faite && $0.type == profilType}).count )/Double( activites.filter({$0.type == profilType}).count )).accentColor(Color("RougeCokido"))
+                    ProgressView(value: Double(data.activites.filter({$0.faite && $0.type == profilType}).count )/Double( data.activites.filter({$0.type == profilType}).count )).accentColor(Color("RougeCokido"))
                         .padding()
 
                                 }
@@ -46,7 +47,7 @@ struct ProfileLearnRow: View {
 
                HStack {
 
-                ForEach (activites.filter({$0.faite && $0.type == profilType})) { i in
+                ForEach (data.activites.filter({$0.faite && $0.type == profilType})) { i in
 
                     activityView(img:i.imageActivite).padding()
 
@@ -64,7 +65,7 @@ struct ProfileLearnRow: View {
 
 struct ProfileLearnRow_Previews: PreviewProvider {
     static var previews: some View {
-        ProfileLearnRow(profilType: Type.Kinesthesique)
+        ProfileLearnRow(profilType: Type.Kinesthesique).environmentObject(Data())
     }
 }
 }

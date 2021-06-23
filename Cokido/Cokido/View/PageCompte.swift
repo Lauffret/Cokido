@@ -5,6 +5,8 @@ import SwiftUICharts
 
 struct PageCompte: View {
     
+    @EnvironmentObject var data: Data
+    
     var profil:Utilisateur
    
     @State var addModal:Bool = false
@@ -57,7 +59,7 @@ struct PageCompte: View {
                             Text("Aujourd'hui tu as fait: ").font(.title2).multilineTextAlignment(.leading).padding(10)
                             
                                 ForEach(Type.allCases, id: \.self){ type in
-                                    Text("\(activites.filter({ $0.faite && $0.type == type }).count) activités \(type.rawValue)").padding(2)
+                                    Text("\(data.activites.filter({ $0.faite && $0.type == type }).count) activités \(type.rawValue)").padding(2)
                                                     }
                                                 }.frame(width: 350, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding().background(Rectangle().foregroundColor(Color("OrangeCokido")).cornerRadius(20).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)).padding()
                                                 
@@ -143,7 +145,7 @@ struct PageCompte: View {
 //}
 struct PageCompte_Previews: PreviewProvider {
     static var previews: some View {
-        PageCompte(profil: utilisateur[0], tabSelection: .constant(2))
+        PageCompte(profil: utilisateur[0], tabSelection: .constant(2)).environmentObject(Data())
     }
 }
 
