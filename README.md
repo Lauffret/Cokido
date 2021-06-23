@@ -11,7 +11,7 @@ Project crée avec :
 * Xcode version: 12.4
 
 ## Installation
-***
+
 Une petite introduction à propos de l'instalation.
 ```
 $ git clone git@gitlab.com:Lauffret/cokido.git
