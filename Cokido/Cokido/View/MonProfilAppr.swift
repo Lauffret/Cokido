@@ -16,10 +16,10 @@ struct MonProfilAppr: View {
                 VStack(alignment: .leading) {
                 VStack(alignment: .leading) {
                     Image(profilApp.image)
-                        .resizable()
-                       .frame(width: 400, height: 120)
+                        .resizable().aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                       .frame(width: 420, height: 120)
                         .cornerRadius(20)
-                        .padding().aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
+                        .padding()
                     
                     Text("Ton profil dominant est : \(profilApp.type.rawValue)")
                         .font(.title3)

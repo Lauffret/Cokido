@@ -66,7 +66,7 @@ struct PageFavoris: View {
             .navigationBarTitleDisplayMode(.inline)
             .navigationBarItems(trailing: Button("Filtre"){
                 showModal.toggle()
-            }.sheet(isPresented: $showModal, content: {
+            }.foregroundColor(Color("BleuCokido")).sheet(isPresented: $showModal, content: {
                     Filtre(dismiss: $showModal,  inter : $inter, exter : $exter, prix: $prix, duree : $duree, nBPerso: $nBPerso
                 )
             }))
