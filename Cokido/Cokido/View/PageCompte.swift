@@ -59,19 +59,17 @@ struct PageCompte: View {
                                 ForEach(Type.allCases, id: \.self){ type in
                                     Text("\(activites.filter({ $0.faite && $0.type == type }).count) activités \(type.rawValue)").padding(2)
                                                     }
-                                                }.frame(width: 250, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding().background(Rectangle().cornerRadius(20).foregroundColor(Color("graybg")))
+                                                }.frame(width: 350, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding().background(Rectangle().foregroundColor(Color("OrangeCokido")).cornerRadius(20).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)).padding()
                                                 
-                                VStack{
+                                VStack(alignment: .leading){
                                         Text("Tu as passé: ").font(.title2).multilineTextAlignment(.leading)
                                             .padding(10)
                                         Text(" 2 h  en activités Visuel").padding(2)
                                         Text(" 3 h  en activités Kinethésique").padding(2)
                                         Text(" 0 min  en activités Audif").padding(2)
-                                                }.frame(width: 250, height: 120, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/)
-                                .padding().background(Rectangle().cornerRadius(20).foregroundColor(Color("graybg")))
+                                                }.frame(width: 350, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding()
+                                .background(Rectangle().foregroundColor(Color("OrangeCokido")).cornerRadius(20).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)).padding()
                         
-                        Text("Dernière série : 5 jours").font(.title2).multilineTextAlignment(.leading)
-                            .padding(10)
                         
                         // LineChart
                        // Section(header: Text("LineChart")) {
@@ -79,7 +77,7 @@ struct PageCompte: View {
                       //  }
                         
                         // Bar Chart
-                        Section(header: Text("Bar Chart")) {
+                        Section(header: Text("Dernière série : 5 jours")) {
                             BarChartView(dataPoints: pointsV).padding()
                             
                         }
@@ -104,7 +102,7 @@ struct PageCompte: View {
                                     Text("Mon profil d'apprentissage").foregroundColor(.white)
                                         .frame(width: 250, height: 20, alignment: .center)
                                         .padding(.all, 20)
-                                        .background(Color.blue)
+                                        .background(Color("BleuCokido"))
                                         .cornerRadius(29)
                                 }
                                 .padding(53)
@@ -132,7 +130,7 @@ struct PageCompte: View {
                             Text("Test").foregroundColor(.white)
                                 .frame(width: 250, height: 20, alignment: .center)
                                 .padding(.all, 20)
-                                .background(Color.blue)
+                                .background(Color("BleuCokido"))
                                 .cornerRadius(29)
                         })
                 }.padding()

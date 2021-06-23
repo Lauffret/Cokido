@@ -1,7 +1,9 @@
 import SwiftUI
 
 struct PageFeedback: View {
-    @State private var username: String = ""
+    @State private var commentaire: String = "Entrez votre commentaire"
+    var placeholderString : String = "Entrez votre commentaire"
+    
     @State private var showingAlert = false
     
     @State private var didTap:Bool = false
@@ -23,12 +25,12 @@ struct PageFeedback: View {
     
     var body: some View {
             VStack {
-                Text("Alors, ça t'a plu?").font(.title).fontWeight(.regular).multilineTextAlignment(.center).padding()
+                Text("Donnez votre avis").font(.title).fontWeight(.regular).multilineTextAlignment(.center).padding()
                 
                 HStack {
                     
                     Button(action: {imageSad = imageSF; imageHappy = imageH;imageIndifferent = imageI}, label: {
-                        Image( imageSad ).resizable()
+                        Image( imageSad).resizable()
                             .frame(width: 72.0, height: 72.0)
                     })
                     
@@ -43,23 +45,27 @@ struct PageFeedback: View {
                     })
                 }
                 
-                TextField(
-                    "Ajotes des notes"
-                    ,text: $username)
-                    .autocapitalization(.none)
-                    .disableAutocorrection(true)
-                    .padding(.all)
-                    .border(Color(UIColor.separator))
-                    .cornerRadius(3.0)
-                    .padding(.leading)
-                    .padding(.trailing)
-                    .padding(60
-                    )
+                TextEditor(text: self.$commentaire)
+                                .padding(.top, 20)
+                                .foregroundColor(self.commentaire == placeholderString ? .gray : .primary)
+                                .onTapGesture {
+                                    if self.commentaire == placeholderString {
+                                        self.commentaire = ""
+                                    }
+                                }.foregroundColor(.black).frame(width: 300, height: 200)
+                    .font(.system(size: 20))
+                    .padding()
+                    .foregroundColor(.gray)
+                    .overlay(
+                        RoundedRectangle(cornerRadius: 20)
+                         .stroke(Color.gray, lineWidth: 1.5)
+                    ).padding(60)
+
                 
                 Button(action: {
                         self.didTap = true;
                         showingAlert = true;
-                    imageHappy = imageH; imageSad = imageS;imageIndifferent = imageI; username = ""
+                    imageHappy = imageH; imageSad = imageS;imageIndifferent = imageI; commentaire = ""
                 }) {
                     
                     Text("Enregister")
@@ -68,7 +74,7 @@ struct PageFeedback: View {
                 .foregroundColor(.white)
                 .frame(width: 120, height: 12, alignment: .center)
                 .padding(.all, 20)
-                .background(didTap ? Color.green : Color.blue)
+                .background(didTap ? Color("VertCokido") : Color("BleuCokido"))
                 .cornerRadius(29).alert(isPresented: $showingAlert, content: {
                     Alert(
                         title: Text(""),
@@ -91,7 +97,7 @@ struct PageFeedback: View {
                 
             }.navigationTitle("Feedback").navigationBarTitleDisplayMode(.inline)
         }
-        //        Text(username)
+
         
 }
 

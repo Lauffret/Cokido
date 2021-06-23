@@ -6,6 +6,7 @@
 //
 
 import Foundation
+import SwiftUI
 import SwiftUICharts
 
 var activites: [Activite] = [ pateADessiner, feuillesFantomes, respiration, papillons, cocoColore , sylRig, flotteCoule ]
@@ -67,7 +68,7 @@ var feuillesFantomes = Activite(
     inter: true,
     exter: false,
     favori: false,
-    apprentissage: "Le projet des feuilles fantômes est idéal en automne, pour célébrer l’Halloween. La forme de certaines feuilles se prête très bien à la création des fantômes. Quelques exemples de questions : Célèbres-tu l’Halloween? Si oui, quel costume vas-tu porter? Cette question est ouverte et permet aux enfants de s’exprimer et de décrire leur costume d’Halloween… ou n’importe quel déguisement qu’ils aimeraient porter pour d’autres occasions. Quand célèbre-t-on l’Halloween? L’Halloween se fête le 31 octobre. Quelle est la sorte de bonbons que tu préfères recevoir pour l’Halloween? Chaque enfant peut nommer ou décrire ses bonbons favoris.",
+    apprentissage: "Le projet des feuilles fantômes est idéal en automne, pour célébrer l’Halloween. La forme de certaines feuilles se prête très bien à la création des fantômes.",
     faite: true,
     type: Type.Visuel,
     prix: 10,
@@ -80,10 +81,10 @@ var respiration = Activite(
     titreActivite: "Respiration consciente",
     description: "La respiration est un acte si essentiel à la survie, mais oh! combien sous-estimé! On pense que respirer n’est bon que pour survivre, mais la respiration, c’est tellement plus que ça. Autant pour les adultes que pour les enfants, elle est utile pour calmer les émotions, connecter avec son ressenti ainsi que favoriser la concentration et l’attention en général. Quelques instants de respiration consciente peuvent rapidement changer l’énergie, l’ambiance et la dynamique.",
     etapes: [
-        "Prendre conscience de leur ventre qui se gonfle \r Cette semaine, commencez tout en douceur. En position couchée ou assise, aidez les enfants à prendre conscience de leur ventre qui se gonfle et se dégonfle pendant la respiration. Demandez aux enfants de fermer les yeux et de déposer leurs mains sur leur ventre. Invitez-les à inspirer et à expirer profondément et aidez-les à remarquer les mouvements de leur ventre. Amenez tranquillement les enfants à ralentir leur respiration pour sentir avec leurs mains la différence dans les mouvements de leur corps. Répétez cet exercice à quelques reprises tous les jours de la semaine.",
-        "Ancrage à la terre Pour cette deuxième semaine, ancrez les enfants à la terre avec la posture de l’arbre alliée au « flow » de leur respiration. Les enfants se placent debout et étirent les bras dans les airs. Les enfants commencent par prendre une grande respiration et ils expirent ensuite tout doucement. À la respiration suivante, ils bougent les bras tranquillement de gauche à droite, comme des branches d’un arbre dans le vent. Encouragez-les à se balancer tout doucement, alliant à leurs mouvements une respiration lente afin de favoriser le calme.",
-        "La cohérence cardiaque Lors de cette troisième semaine, pratiquez la cohérence cardiaque. Celle-ci consiste à amener les enfants à ralentir leur respiration tout en suivant les mouvements guidés par l’adulte. Positionnez-vous devant les enfants. Vous pouvez utiliser une plume ou simplement vos mains. Levez les mains dans les airs doucement (les enfants inspirent) et redescendez les bras (les enfants expirent). Vous pourriez aussi inviter les enfants à faire les mouvements avec vous.",
-        "La fleur imaginaire Pour terminer ce défi, faites appel à la fleur imaginaire. Demandez aux enfants de fermer leurs yeux et d’imaginer la fleur de leur choix. Ensuite, toujours avec les yeux fermés, invitez-les à inspirer profondément pour la sentir. Ils pourront ensuite souffler doucement sur les pétales de la fleur en expirant. Répétez cet exercice à quelques reprises.",
+        "Prendre conscience de leur ventre qui se gonfle \r Cette semaine, commencez tout en douceur. En position couchée ou assise, aidez les enfants à prendre conscience de leur ventre qui se gonfle et se dégonfle pendant la respiration."," Demandez aux enfants de fermer les yeux et de déposer leurs mains sur leur ventre. ","Invitez-les à inspirer et à expirer profondément et aidez-les à remarquer les mouvements de leur ventre. Amenez tranquillement les enfants à ralentir leur respiration pour sentir avec leurs mains la différence dans les mouvements de leur corps. Répétez cet exercice à quelques reprises tous les jours de la semaine.",
+        "Ancrage à la terre Pour cette deuxième semaine, ancrez les enfants à la terre avec la posture de l’arbre alliée au « flow » de leur respiration. Les enfants se placent debout et étirent les bras dans les airs. ","Les enfants commencent par prendre une grande respiration et ils expirent ensuite tout doucement. À la respiration suivante, ils bougent les bras tranquillement de gauche à droite, comme des branches d’un arbre dans le vent."," Encouragez-les à se balancer tout doucement, alliant à leurs mouvements une respiration lente afin de favoriser le calme.",
+        "La cohérence cardiaque Lors de cette troisième semaine, pratiquez la cohérence cardiaque. Celle-ci consiste à amener les enfants à ralentir leur respiration tout en suivant les mouvements guidés par l’adulte."," Positionnez-vous devant les enfants. Vous pouvez utiliser une plume ou simplement vos mains. Levez les mains dans les airs doucement (les enfants inspirent) et redescendez les bras (les enfants expirent). ",
+        "La fleur imaginaire Pour terminer ce défi, faites appel à la fleur imaginaire. Demandez aux enfants de fermer leurs yeux et d’imaginer la fleur de leur choix. Ensuite, toujours avec les yeux fermés, invitez-les à inspirer profondément pour la sentir."," Ils pourront ensuite souffler doucement sur les pétales de la fleur en expirant. Répétez cet exercice à quelques reprises.",
         ],
     materiel: [coussin:"1",
     ],
@@ -109,7 +110,8 @@ var papillons = Activite(
         "Imprimez des papillons que vous trouverez sur internet ou dessinez les. Plastifiez-les et découpez-les. Encouragez chaque enfant à choisir un papillon que vous fixerez au bout d’une paille à boire.",
         "Imprimez des pages sur lesquelles on trouve des fleurs pour chaque enfant. Plastifiez et découpez les fleurs. Les enfants les fixent sur des bâtons Popsicle de couleur verte.",
         "Dans la cour extérieure, aidez les enfants à piquer leurs fleurs dans le gazon à l’intérieur de leur espace de jeu personnel, en vous assurant de respecter la distance de 2 mètres entre les enfants.",
-        "Ensuite, invitez les enfants à solliciter leurs muscles afin de faire voler leur petit papillon. Afin d’encourager les enfants à se mouvoir de différentes façons, proposez-leur des actions qu’ils pourront reproduire en tenant la paille sur laquelle leur papillon est fixé. \r-Voici des suggestions : \r-Ton petit papillon vole très, très haut .\r-Il fait de gros zigzags devant tes yeux.\r-Il se pose tout doucement sur la fleur jaune.\r-Rapidement, il virevolte jusqu’à la fleur bleu et mauve.\r-Le vent le fait tomber par terre.\r-Il repart en volant aussitôt et se pose sur ton nez.\r-Il fait le tour de ta tête et redescend au sol.\r-Il est attiré par la fleur de couleur orange et se pose dessus.\r-Ton papillon se promène de ta main droite à ta main gauche plusieurs fois.\r-Il atterrit sur ton pied.\r-Tu soulèves ton pied et il se remet à voler.\r-Il touche la fleur avec du vert et du jaune.\r-Il touche la fleur avec la couleur rose et la couleur orange.\r-Il se cache dans ton dos.\r-Tu te détournes pour le voir, vers la droite et vers la gauche.\r-Tu essaies même de le voir en regardant entre tes jambes.\r-Ton papillon est déchainé! Il passe d’une fleur à l’autre très, très vite.\r-Ses muscles sont fatigués et les tiens aussi, tu t’étends par terre.\r-Ton papillon se pose sur ton ventre.\r-Prends de grandes respirations et regarde-le monter et descendre tout doucement."
+        "Ensuite, invitez les enfants à solliciter leurs muscles afin de faire voler leur petit papillon. ","Afin d’encourager les enfants à se mouvoir de différentes façons, proposez-leur des actions qu’ils pourront reproduire en tenant la paille sur laquelle leur papillon est fixé.",
+        " \r-Voici des suggestions : \r-Ton petit papillon vole très, très haut .\r-Il fait de gros zigzags devant tes yeux.\r-Il se pose tout doucement sur la fleur jaune.\r-Rapidement, il virevolte jusqu’à la fleur bleu et mauve.","\r-Il fait le tour de ta tête et redescend au sol.\r-Il est attiré par la fleur de couleur orange et se pose dessus.\r-Ton papillon se promène de ta main droite à ta main gauche plusieurs fois.","\r-Il touche la fleur avec du vert et du jaune.\r-Il touche la fleur avec la couleur rose et la couleur orange.\r-Il se cache dans ton dos.\r-Tu te détournes pour le voir, vers la droite et vers la gauche.\r-Tu essaies même de le voir en regardant entre tes jambes.","\r-Ton papillon est déchainé! Il passe d’une fleur à l’autre très, très vite.\r-Ses muscles sont fatigués et les tiens aussi, tu t’étends par terre.\r-Ton papillon se pose sur ton ventre.\r-Prends de grandes respirations et regarde-le monter et descendre tout doucement."
         
     ],
     materiel: [imprimeFleur:"1 par enfant",
@@ -122,7 +124,7 @@ var papillons = Activite(
     inter: true,
     exter: false,
     favori: false,
-    apprentissage: "Vous comprendrez que les possibilités sont infinies! Plus vous dicterez les instructions rapidement, plus les enfants auront chaud! Amusez-vous à alterner entre des mouvements rapides et lents, entre des actions en hauteur et au sol.\rSans le savoir, les enfants auront travaillé les muscles de leurs bras, de leur dos et de leur tronc, tout cela en s'exerçant à écouter les consignes. \rAvec les enfants plus vieux, vous pourriez même les laisser jouer le rôle de meneur de jeu chacun à leur tour!",
+    apprentissage: "Vous comprendrez que les possibilités sont infinies! Plus vous dicterez les instructions rapidement, plus les enfants auront chaud! Amusez-vous à alterner entre des mouvements rapides et lents, entre des actions en hauteur et au sol.",
     faite: true,
     type: Type.Kinesthesique,
     prix: 10,
@@ -137,7 +139,9 @@ var cocoColore = Activite(
     etapes: [
         "Imprimez deux pages contenant des dessins d'oeufs. Plastifiez et découpez les 2 séries d’œufs. Fixez chaque série d’œufs sur un mur différent, à la hauteur des enfants.",
         "Ensuite, gonflez plusieurs ballons de fête de manière à avoir au moins 2 ballons correspondant à la couleur de chaque œuf fixé au mur. Les ballons représenteront des œufs de Pâques. Déposez-les dans un gros panier de Pâques ou un bac au centre de la pièce.",
-        "Divisez votre groupe en 2 équipes et attribuez un mur à chacune. À votre signal, les enfants de chaque équipe vont chercher un ballon, courent jusqu’au mur de leur équipe, frottent énergiquement le ballon sur leur pantalon afin de créer de l’électricité statique et tentent ensuite de le faire tenir sur l’œuf de la même couleur, au mur.",
+        
+        "Divisez votre groupe en 2 équipes et attribuez un mur à chacune."," À votre signal, les enfants de chaque équipe vont chercher un ballon, courent jusqu’au mur de leur équipe, frottent énergiquement le ballon sur leur pantalon afin de créer de l’électricité statique et tentent ensuite de le faire tenir sur l’œuf de la même couleur, au mur.",
+        
         "Réussir à faire tenir les 5 ballons/œufs de couleur simultanément est tout un défi, car pendant que les enfants s’affairent à tenter d’apposer leurs derniers ballons, les premiers risquent de glisser et tomber au sol…"
     ],
     materiel: [imprimeOeufs:"2 par enfant",
@@ -191,7 +195,7 @@ var flotteCoule = Activite(
     inter: true,
     exter: false,
     favori: false,
-    apprentissage: "Il n’y a pas une seule raison qui peut expliquer pourquoi un objet coule au fond ou reste à la surface de l’eau. Tu as surement remarqué que certains objets sont gros, mais flottent, tandis que d’autres sont petits, mais coulent au fond, ou que certains sont lourds et flottent (pense aux gros bateaux!) et d’autres son légers et coulent (un sou).\rCe n’est donc ni la taille, ni le poids qui détermine si un objet flotte ou coule mais LES DEUX caractéristiques ensemble. Ainsi, la forme de l’objet joue un grand rôle dans sa flottabilité.\rLa pâte à modeler en boule coule au fond tandis que la même pâte à modeler façonnée en forme de bol aux parois minces flotte! C’est incroyable, non?",
+    apprentissage: "Il n’y a pas une seule raison qui peut expliquer pourquoi un objet coule au fond ou reste à la surface de l’eau. Tu as surement remarqué que certains objets sont gros, mais flottent, tandis que d’autres sont petits, mais coulent au fond, ou que certains sont lourds et flottent (pense aux gros bateaux!) et d’autres son légers et coulent (un sou).",
     faite: false,
     type: Type.Visuel,
     prix: 10,
@@ -247,11 +251,11 @@ var yeuxMobiles = Ingredient(nom:"Yeux mobiles")
 
 var coussin = Ingredient(nom:"Coussin")
 
-var imprimePapillons = Ingredient(nom:"Page à imprimer \"papillons\" ")
-var imprimeFleur = Ingredient(nom:"Page à imprimer \"fleurs\" ")
+var imprimePapillons = Ingredient(nom:"Imprimer papillons")
+var imprimeFleur = Ingredient(nom:"Imprimer fleurs")
 var paille = Ingredient(nom:"Pailles")
 
-var imprimeOeufs = Ingredient(nom: "Page à imprimer \"dessins d'oeufs\"")
+var imprimeOeufs = Ingredient(nom: "Imprimer dessins d'oeufs")
 var ballons = Ingredient(nom: "Ballons")
 
 var bacEau = Ingredient(nom:"Grand bac rempli d’eau")
@@ -290,9 +294,9 @@ var kine = ProfilApprentissage(image: "profilk", type: Type.Kinesthesique, cQC: 
 // LEGEND
 let leg = [visuel, kinest, auditif]
 
-let visuel = Legend(color: .blue, label:"Visuel")
-let kinest = Legend(color: .green, label:"Kinesthésique")
-let auditif = Legend(color: .yellow, label:"Auditif")
+let visuel = Legend(color: Color("BleuCokido"), label:"Visuel")
+let kinest = Legend(color: Color("VertCokido"), label:"Kinesthésique")
+let auditif = Legend(color: Color("OrangeCokido"), label:"Auditif")
 
 //DataPoint
 let pointsV: [DataPoint] = [
