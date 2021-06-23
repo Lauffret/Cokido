@@ -14,7 +14,7 @@ Project crée avec :
 ***
 Une petite introduction à propos de l'instalation.
 ```
-$ git clone 
+$ git clone git@gitlab.com:Lauffret/cokido.git
 $ cd ../cokido
 
 ```
