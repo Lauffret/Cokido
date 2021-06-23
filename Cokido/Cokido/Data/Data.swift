@@ -12,6 +12,7 @@ import SwiftUICharts
 
 final class Data:ObservableObject {
     @Published var activites: [Activite] = [ pateADessiner, feuillesFantomes, respiration, papillons, cocoColore , sylRig, flotteCoule ]
+    @Published var utilisateur: Utilisateur = Utilisateur( nom: "Luca Duffard", age: 9, image: "Luca", classe: "CE2",  type: Type.Auditif)
 }
 
 var pateADessiner = Activite(
@@ -41,7 +42,7 @@ var pateADessiner = Activite(
     type: Type.Kinesthesique,
     prix: 10,
     nBPerso: 2,
-    feedback: []
+    feedback: Feedback()
 )
 
 var feuillesFantomes = Activite(
@@ -75,7 +76,7 @@ var feuillesFantomes = Activite(
     type: Type.Visuel,
     prix: 10,
     nBPerso: 2,
-    feedback: []
+    feedback: Feedback()
 )
 
 var respiration = Activite(
@@ -101,7 +102,7 @@ var respiration = Activite(
     type: Type.Auditif,
     prix: 0,
     nBPerso: 2,
-    feedback: []
+    feedback: Feedback()
 )
 
 var papillons = Activite(
@@ -131,7 +132,7 @@ var papillons = Activite(
     type: Type.Kinesthesique,
     prix: 10,
     nBPerso: 2,
-    feedback: []
+    feedback: Feedback()
 )
 
 var cocoColore = Activite(
@@ -160,7 +161,7 @@ var cocoColore = Activite(
     type: Type.Kinesthesique,
     prix: 14,
     nBPerso: 4,
-    feedback: []
+    feedback: Feedback()
 )
 
 
@@ -202,7 +203,7 @@ var flotteCoule = Activite(
     type: Type.Visuel,
     prix: 10,
     nBPerso: 2,
-    feedback: [Feedback(imageEmoji: "sad face", note: "Les enfants on participé mais sont encore un petit peu trop peties pour jouer à ce jeu.")]
+    feedback: Feedback(note: 1, commentaire: "Les enfants on participé mais sont encore un petit peu trop peties pour jouer à ce jeu.")
 )
 
 var sylRig = Activite(
@@ -229,7 +230,7 @@ var sylRig = Activite(
     type: Type.Auditif,
     prix: 0,
     nBPerso: 5,
-    feedback: [Feedback(imageEmoji: "happy face", note: "Les enfants on beaucoup ri."),  Feedback(imageEmoji: "happy face", note:  "On a aussi essayé de jouer avec des noms d'animaux.")]
+    feedback: Feedback(note: 10, commentaire: "Les enfants on beaucoup ri.")
 )
 
 
@@ -276,7 +277,6 @@ var pateModelerBoulle = Ingredient(nom:"Pate à modeler en forme de boulle")
 var imagination = Ingredient(nom: "Imagination")
 
 
-
 let utilisateur = [
     Utilisateur( nom: "Luca Duffard", age: 9, image: "Luca", classe: "CE2",  type: Type.Auditif),
     Utilisateur(nom: "Ame Duffard",age: 10, image: "Ame",  classe: "CM1", type: Type.Visuel),
@@ -317,3 +317,18 @@ let pointsV: [DataPoint] = [
     .init(value: 5, label: "5", legend: leg[2]),
     .init(value: 3, label: "3", legend: leg[2])
 ]
+
+
+// Data du test
+
+let monTest : [Test] = [ question1, question2, question3, question4, question5 ]
+
+var question1 = Test(question: "Tu rencontres quelqu’un pour la première fois. Que retiens-tu de cette personne en premier ?",reponse: [ [1 : ["yeux","La couleur de ses yeux ou vêtements"]] , [2 : ["voix","Le son de sa voix et ce qu'elle a dit"]] , [ 3 : ["bienavec","Le fait que tu te sentes bien avec elle"]] ])
+
+var question2 = Test(question:"Tu préfères quelle activité ?",reponse: [ [1 : ["2lire","Lire un livre"]] , [2 : ["2ecouter","Ecouter de la musique"]] , [ 3 : ["2dessin","Dessiner"]] ])
+
+var question3 = Test(question:"Quand je te dis : penses à un poussin. Qu’estce qui te vient en premier à l’esprit ?",reponse: [ [1 : ["3couleur","Sa couleur"]] , [2 : ["3piaille","ESon piaillement"]] , [ 3 : ["3doux","Sa douceur"]] ])
+
+var question4 = Test(question:"Tu retiens plus facilement par coeur :",reponse: [ [1 : ["2lire","Quand tu lis un texte"]] , [2 : ["2ecouter","Quand tu entends une chanson"]] , [ 3 : ["sportco","Les mouvements d’une danse ou d’un sport"]] ])
+
+var question5 = Test(question:"Quand je te dis «les vagues de la mer»",reponse: [ [1 : ["5voiemer","Tu vois la mer bleue avec ses vagues"]] , [2 : ["5entendmer","Tu entends le son des vagues"]] , [ 3 : ["5mouillermer","Tu sens la fraîcheur de l’eau sur ton corps"]] ])

@@ -141,7 +141,7 @@ struct PageDetailActivite: View {
                         .background(Color("BleuCokido"))
                         .cornerRadius(10)
                 }).sheet(isPresented: $feedback, content: {
-                            PageFeedback(didTap: $feedback)}).navigationTitle(Text("\(activite.titreActivite)")).navigationBarTitleDisplayMode(.inline)
+                            PageFeedback(didTap: $feedback, monFeedback: $data.activites[activiteIndex].feedback)}).navigationTitle(Text("\(activite.titreActivite)")).navigationBarTitleDisplayMode(.inline)
                 
                 // Button - Fin
             }

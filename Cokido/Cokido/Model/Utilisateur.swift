@@ -13,7 +13,7 @@ struct Utilisateur {
     var age : Int
     var image : String
     var classe : String
-    var type : Type
+    var type : Type 
     var profil :ProfilApprentissage {
         switch type {
         case .Kinesthesique:

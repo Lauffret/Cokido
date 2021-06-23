@@ -11,28 +11,33 @@ struct tabViewCokido: View {
     
     @EnvironmentObject var data: Data
     @State var tabSelection = 1
-    var utilisateur: Utilisateur
+    @State private var animationLaunch = false
     
     var body: some View {
-        TabView(selection: $tabSelection) {
-            PageActivites(tabSelection: $tabSelection).tabItem { Image(systemName: "hand.tap")
-                Text("Activités")}.tag(1)
+        ZStack {
+            TabView(selection: $tabSelection) {
+                PageActivites(tabSelection: $tabSelection).tabItem { Image(systemName: "hand.tap")
+                    Text("Activités")}.tag(1)
+                
+                PageFavoris(tabSelection: $tabSelection).tabItem {
+                    Label(
+                        title: { Text("Favoris") },
+                        icon: { Image(systemName: "star") }
+    )
+                }.tag(2)
+                
+                PageCompte(tabSelection: $tabSelection).tabItem { Image(systemName: "person")
+                    Text("Compte") }.tag(3)
+            }.accentColor(Color("BleuCokido"))
             
-            PageFavoris(tabSelection: $tabSelection).tabItem {
-                Label(
-                    title: { Text("Favoris") },
-                    icon: { Image(systemName: "star") }
-)
-            }.tag(2)
-            
-            PageCompte(profil: utilisateur, tabSelection: $tabSelection).tabItem { Image(systemName: "person")
-                Text("Compte") }.tag(3)
-        }.accentColor(Color("BleuCokido"))
+            AnimationView(animationLaunch: $animationLaunch).opacity(animationLaunch ? 0 : 1)
+        }
+        
     }
 }
 
 struct tabViewCokido_Previews: PreviewProvider {
     static var previews: some View {
-        tabViewCokido(utilisateur: utilisateur[0]).environmentObject(Data())
+        tabViewCokido().environmentObject(Data())
     }
 }

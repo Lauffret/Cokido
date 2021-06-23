@@ -7,7 +7,6 @@ struct PageCompte: View {
     
     @EnvironmentObject var data: Data
     
-    var profil:Utilisateur
     
     @State var addModal:Bool = false
     @Binding var tabSelection: Int
@@ -17,22 +16,22 @@ struct PageCompte: View {
         NavigationView {
             ZStack {
                 ScrollView {
-                    VStack { // entre info profil et sections:Mes activites et Mon parcours
+                    VStack { // entre info utilisateur et sections:Mes activites et Mon parcours
                         
-                        Image(profil.image)
+                        Image(data.utilisateur.image)
                             .resizable()
                             .aspectRatio(contentMode: /*@START_MENU_TOKEN@*/.fill/*@END_MENU_TOKEN@*/)
                             .frame(width: 250, height: 250)
                             .clipped()
                             .cornerRadius(150)
                             .shadow(radius: 3)
-                        Text(profil.nom)
+                        Text(data.utilisateur.nom)
                             .font(.title)
                             .fontWeight(.medium)
-                        Text("\(profil.age) ans")
+                        Text("\(data.utilisateur.age) ans")
                             .font(/*@START_MENU_TOKEN@*/.title2/*@END_MENU_TOKEN@*/)
                             .fontWeight(.medium)
-                        Text(profil.classe)
+                        Text(data.utilisateur.classe)
                             .font(/*@START_MENU_TOKEN@*/.title3/*@END_MENU_TOKEN@*/)
                             .fontWeight(.medium)
                             .padding(.bottom)
@@ -101,7 +100,7 @@ struct PageCompte: View {
                                     
                                     addModal.toggle()
                                 }){
-                                    Text("Mon profil d'apprentissage").foregroundColor(.white)
+                                    Text("Mon utilisateur d'apprentissage").foregroundColor(.white)
                                         .frame(width: 250, height: 20, alignment: .center)
                                         .padding(.all, 20)
                                         .background(Color("BleuCokido"))
@@ -109,7 +108,7 @@ struct PageCompte: View {
                                 }
                                 .padding(53)
                                 .sheet(isPresented: $addModal, content: {
-                                    MonProfilAppr(retour: $addModal, profilApp: profil.profil )
+                                    MonProfilAppr(retour: $addModal, profilApp:data.utilisateur.profil)
                                 })
                             }
                             
@@ -145,7 +144,7 @@ struct PageCompte: View {
     //}
     struct PageCompte_Previews: PreviewProvider {
         static var previews: some View {
-            PageCompte(profil: utilisateur[0], tabSelection: .constant(2)).environmentObject(Data())
+            PageCompte( tabSelection: .constant(2)).environmentObject(Data())
         }
     }
     

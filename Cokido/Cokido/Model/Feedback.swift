@@ -7,6 +7,6 @@
 
 import Foundation
 struct Feedback {
-    var imageEmoji : String// permet de noter l'activité
-    var note : String // commmentaire sur l'activité
+    var note : Int = 0
+    var commentaire : String = "Entrez votre commentaire"
 }

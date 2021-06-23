@@ -12,7 +12,7 @@ struct CokidoApp: App {
     @StateObject private var data = Data()
     var body: some Scene {
         WindowGroup {
-            tabViewCokido( utilisateur: utilisateur[0]).environmentObject(data)
+            tabViewCokido().environmentObject(data)
         }
     }
 }
