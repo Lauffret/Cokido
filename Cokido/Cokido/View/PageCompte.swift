@@ -126,7 +126,7 @@ struct PageCompte: View {
                 VStack {
                     Spacer()
                     NavigationLink(
-                        destination: PageTest(),
+                        destination: PageTest(monProfil: $data.utilisateur.type),
                         label: {
                             Text("Test").foregroundColor(.white)
                                 .frame(width: 250, height: 20, alignment: .center)

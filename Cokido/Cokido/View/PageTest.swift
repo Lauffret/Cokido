@@ -19,7 +19,8 @@ struct PageTest: View {
     @State var visuel:Int = 0
     @State var kines:Int = 0
     @State var modal: Bool = false
-    @State var res: String = ""
+    
+    @Binding var monProfil: Type
     
     var body: some View {
         
@@ -118,7 +119,7 @@ struct PageTest: View {
                 Text("Vous avez terminé le test")
                 if auditif > kines && auditif > visuel{
                     Text("Votre profil d'apprentssage est \(Type.Auditif.rawValue) ")
-                    Button(action: {
+                    Button(action: {monProfil = Type.Auditif;
                             modal.toggle()}, label: {
                         Text("Plus d'information")
                     }).sheet(isPresented: $modal, content: {
@@ -127,7 +128,7 @@ struct PageTest: View {
 
                 }else if kines > auditif && kines > visuel{
                     Text("Votre profil d'apprentssage est \(Type.Kinesthesique.rawValue) ")
-                    Button(action: {modal.toggle()}, label: {
+                    Button(action: {monProfil = Type.Kinesthesique;modal.toggle()}, label: {
                         Text("Plus d'information")
                     }).sheet(isPresented: $modal, content: {
                         MonProfilAppr(retour: $modal, profilApp: kine)
@@ -135,7 +136,7 @@ struct PageTest: View {
 
                 }else{
                     Text("Votre profil d'apprentssage est \(Type.Visuel.rawValue) ")
-                    Button(action: { modal.toggle()}, label: {
+                    Button(action: {monProfil = Type.Visuel; modal.toggle()}, label: {
                         Text("Plus d'information")
                     }).sheet(isPresented: $modal, content: {
                         MonProfilAppr(retour: $modal, profilApp: visu)
@@ -154,7 +155,7 @@ struct PageTest: View {
 
 struct PageTest_Previews: PreviewProvider {
     static var previews: some View {
-        PageTest()
+        PageTest(monProfil: .constant(Type.Auditif))
     }
 }
 

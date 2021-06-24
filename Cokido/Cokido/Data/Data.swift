@@ -327,7 +327,7 @@ var question1 = Test(question: "Tu rencontres quelqu’un pour la première fois
 
 var question2 = Test(question:"Tu préfères quelle activité ?",reponse: [ [1 : ["2lire","Lire un livre"]] , [2 : ["2ecouter","Ecouter de la musique"]] , [ 3 : ["2dessin","Dessiner"]] ])
 
-var question3 = Test(question:"Quand je te dis : penses à un poussin. Qu’estce qui te vient en premier à l’esprit ?",reponse: [ [1 : ["3couleur","Sa couleur"]] , [2 : ["3piaille","ESon piaillement"]] , [ 3 : ["3doux","Sa douceur"]] ])
+var question3 = Test(question:"Quand je te dis : penses à un poussin. Qu’estce qui te vient en premier à l’esprit ?",reponse: [ [1 : ["3couleur","Sa couleur"]] , [2 : ["3piaille","Son piaillement"]] , [ 3 : ["3doux","Sa douceur"]] ])
 
 var question4 = Test(question:"Tu retiens plus facilement par coeur :",reponse: [ [1 : ["2lire","Quand tu lis un texte"]] , [2 : ["2ecouter","Quand tu entends une chanson"]] , [ 3 : ["sportco","Les mouvements d’une danse ou d’un sport"]] ])
 
