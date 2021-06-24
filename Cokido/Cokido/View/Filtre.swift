@@ -14,11 +14,13 @@ struct Filtre: View {
     @Binding  var prix : Double
     @Binding  var duree : Double
     @Binding  var nBPerso : Int
+    @Binding var materielSelect : [Ingredient]
+    
     var row = [GridItem(.adaptive(minimum: 100))]
     var body: some View {
         NavigationView(){
             VStack(alignment: .leading){
-              
+                
                 VStack{
                     HStack{// toogle exter
                         Toggle(isOn: $inter) {
@@ -36,19 +38,37 @@ struct Filtre: View {
                 
                 
                 Text("Matériel")
-                LazyVGrid(columns: row, spacing: 20){// Grid materiel
+                LazyVGrid(columns: row, spacing: 35){// Grid materiel
                     ForEach(ingredient){ ingre in
                         
-                        IngredientRow(ingredient: ingre)
+                        if materielSelect.contains(ingre) {
+                            
+                            Button(action: {if let index = materielSelect.firstIndex(of: ingre) {
+                                materielSelect.remove(at: index)
+                            } }, label: {
+                                
+                                IngredientRow(ingredient: ingre).accentColor(.black).overlay(
+                                    RoundedRectangle(cornerRadius: 100)
+                                        .stroke(Color.gray, lineWidth: 1.5).frame(width: 110, height: 110)
+                                )
+                                
+                            })
+                            
+                        }else{
+                            Button(action: { materielSelect.append(ingre) }, label: {
+                                
+                                IngredientRow(ingredient: ingre).accentColor(.black)
+                            })
+                        }
                         
                     }
                     
                 }
-
+                
                 VStack(alignment: .leading){
                     Spacer()
                     Text("Prix")
-
+                    
                     HStack{// slider prix
                         Slider(value: $prix, in: 0...100, step: 0.5).accentColor(Color("BleuCokido"))
                         Text("max. \(String(format: "%.02f",prix)) €")
@@ -76,7 +96,7 @@ struct Filtre: View {
                         Stepper(value: $nBPerso, in: 1...50, step: 1) {
                             Text("max. \(nBPerso) personnes")
                         }.padding()
-                       
+                        
                     }
                     Spacer()
                 }
@@ -92,6 +112,6 @@ struct Filtre: View {
 struct Filtre_Previews: PreviewProvider {
     static var previews: some View {
         Filtre(dismiss: .constant(false), inter: .constant(true), exter: .constant(true),
-               prix: .constant(12.0), duree: .constant(100.0), nBPerso: .constant(3))
+               prix: .constant(12.0), duree: .constant(100.0), nBPerso: .constant(3), materielSelect: .constant([]))
     }
 }

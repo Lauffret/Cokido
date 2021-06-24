@@ -244,13 +244,13 @@ var sylRig = Activite(
 var sel = Ingredient(nom: "Sel", image : "sel")
 var feuille =  Ingredient(nom: "Feuille", image: "feuille")
 
-let ingredient = [rien, sel, gouache, feuille, eauTiede, farine, ciseaux ]
+let ingredient = [rien, coussin , gouache, feuille, eauTiede, farine , paille ]
 
 var farine = Ingredient(nom: "Farine", image : "farine")
 var eauTiede = Ingredient(nom: "Eau tiède",  image : "eau")
 var gouache = Ingredient(nom: "Gouache", image:"gouache")
 
-var rien = Ingredient(nom: "sans materiel", image: "croix")
+var rien = Ingredient(nom: "Aucun", image: "croix")
 
 var feuillesArbres = Ingredient(nom: "Feuilles d’arbres séchées")
 var pinceau = Ingredient(nom:"Pinceau")
@@ -259,11 +259,11 @@ var ciseaux = Ingredient(nom:"Ciseaux", image :"siceaux")
 var colleBlanche = Ingredient(nom:"Colle blanche")
 var yeuxMobiles = Ingredient(nom:"Yeux mobiles")
 
-var coussin = Ingredient(nom:"Coussin")
+var coussin = Ingredient(nom:"Coussin", image: "coussin")
 
 var imprimePapillons = Ingredient(nom:"Imprimer papillons")
 var imprimeFleur = Ingredient(nom:"Imprimer fleurs")
-var paille = Ingredient(nom:"Pailles")
+var paille = Ingredient(nom:"Pailles" , image: "pailles")
 
 var imprimeOeufs = Ingredient(nom: "Imprimer dessins d'oeufs")
 var ballons = Ingredient(nom: "Ballons")

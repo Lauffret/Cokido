@@ -27,29 +27,3 @@ struct ActiviteDuree_Previews: PreviewProvider {
         ActiviteDuree().environmentObject(Data())
     }
 }
-
-
-func dureeAct(typeA : Type, mesActivites : [Activite] ) -> String  {
-    var duree : Double = 0
-    var dureeT : String = ""
-    
-    for i in mesActivites{
-        
-        if i.type == typeA && i.faite {
-            duree += Double(i.duree)
-        }
-    }
-    
-    let heure = Int(duree) / 60
-    let minute =  Int (round( (duree / 60.0 -  Double(  Int(duree) / 60)) * 60.0 ))
-    
-    if(duree < 60.0){
-       dureeT = "\(Int(duree))  min"
-    }else{
-        dureeT = "\( heure ) h \( minute )"
-        
-    }
-    
-    return dureeT
-}
-

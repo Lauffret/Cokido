@@ -157,13 +157,3 @@ struct PageTest_Previews: PreviewProvider {
         PageTest(monProfil: .constant(Type.Auditif))
     }
 }
-
-func resultatTest(kines:Int, auditif:Int, visuel:Int ) -> ProfilApprentissage {
-    if auditif >= kines && auditif > visuel{
-        return audi
-    }else if kines > auditif && kines >= visuel{
-        return kine
-    }else{
-        return visu
-    }
-}

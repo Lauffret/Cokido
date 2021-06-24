@@ -20,6 +20,7 @@ struct PageActivites: View {
     @State private var duree : Double = 1000.0
     @State private var nBPerso : Int = 50
     @State private var searchText : String = ""
+    @State var materielSelect : [Ingredient] = []
     @Binding var tabSelection: Int
 
 var body: some View {
@@ -28,7 +29,8 @@ var body: some View {
                 Spacer()
                 SearchBarView(rechercheText: $rechercheText)
                 LazyVGrid(columns: grid, spacing: 30) {
-                    ForEach(data.activites.filter({ ($0.inter == inter || $0.exter == exter) && $0.prix <= prix && $0.duree <= Int(duree) && $0.nBPerso <= nBPerso && (rechercheText.isEmpty ? true : $0.titreActivite.contains(rechercheText))
+                    ForEach(data.activites.filter({ ($0.inter == inter || $0.exter == exter) && $0.prix <= prix && $0.duree <= Int(duree) && $0.nBPerso <= nBPerso && (rechercheText.isEmpty ? true : $0.titreActivite.contains(rechercheText)) &&
+                        (materielSelect.isEmpty ? true : $0.materiel.keys.contains(where: { materielSelect.contains($0) }))
                     }
                     )){ activite in
                         NavigationLink(
@@ -47,7 +49,7 @@ var body: some View {
             .navigationBarItems(trailing: Button("Filtre"){
                 showModal.toggle()
             }.foregroundColor(Color("BleuCokido")).sheet(isPresented: $showModal, content: {
-                Filtre(dismiss: $showModal,  inter : $inter, exter : $exter, prix: $prix, duree : $duree, nBPerso: $nBPerso)
+                Filtre(dismiss: $showModal,  inter : $inter, exter : $exter, prix: $prix, duree : $duree, nBPerso: $nBPerso, materielSelect: $materielSelect)
             }))
         }
     }
