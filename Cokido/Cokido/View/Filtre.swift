@@ -57,7 +57,7 @@ struct Filtre: View {
                     Text("Durée")
                     HStack{// slider duree
                         let heure = Int(duree) / 60
-                        let minute = Int((duree / 60.0 - Double (Int( duree / 60.0))) * 60 )
+                        let minute = Int( round((duree / 60.0 - Double (Int( duree / 60.0))) * 60 ))
                         Slider(value: $duree, in: 0...500, step: 10).accentColor(Color("BleuCokido"))
                         if(duree < 60.0){
                             Text("max. \(Int(duree))  min")

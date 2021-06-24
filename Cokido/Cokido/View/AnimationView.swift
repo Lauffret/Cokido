@@ -31,14 +31,6 @@ struct AnimationView: View {
                             .frame(width:100, height: 100)
                             .foregroundColor(Color("RougeCokido"))
                             .scaleEffect(scale)
-                            //                        .onAppear {
-                            //                            let baseAnimation = Animation.easeInOut(duration: 1)
-                            //                            let repeated = baseAnimation.repeatCount(8)
-                            //
-                            //                            withAnimation(repeated) {
-                            //                                scale = 1.00
-                            //                            }
-                            //                        }
                             .animation(Animation.easeInOut(duration: 2.0).delay(0.1).speed(1.0))
                         
                         
@@ -48,15 +40,6 @@ struct AnimationView: View {
                             .frame(width: 100, height: 100)
                             .foregroundColor(Color("OrangeCokido"))
                             .scaleEffect(scale)
-                            //                        .onAppear {
-                            //                            let baseAnimation = Animation.easeInOut(duration: 1)
-                            //                            let repeated = baseAnimation.repeatCount(8)
-                            //
-                            //                            withAnimation(repeated) {
-                            //                                scale = 0.5
-                            //                            }
-                            //                        }
-                            //
                             .animation(Animation.easeInOut(duration: 2.0).delay(0.5).speed(1.0))
                         
                         
@@ -65,14 +48,6 @@ struct AnimationView: View {
                             .frame(width: 100, height: 100)
                             .foregroundColor(Color("VertCokido"))
                             .scaleEffect(scale)
-                            //                        .onAppear {
-                            //                            let baseAnimation = Animation.easeInOut(duration: 1)
-                            //                            let repeated = baseAnimation.repeatCount(8) //baseAnimation.repeatForever(autoreverses: true)
-                            //
-                            //                            withAnimation(repeated) {
-                            //                                scale = 0.5
-                            //                            }
-                            //                        }
                             .animation(Animation.easeInOut(duration: 2.0).delay(0.9).speed(1.0))
                         
                         

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6F21654D2684C75700CB44A0 /* ActiviteDuree.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F21654C2684C75700CB44A0 /* ActiviteDuree.swift */; };
 		6F98BD5B2683945D00BE1E2E /* Test.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F98BD5A2683945D00BE1E2E /* Test.swift */; };
 		6F98BD632683AEA900BE1E2E /* AnimationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6F98BD622683AEA900BE1E2E /* AnimationView.swift */; };
 		6FE54EBD2681092200B29A48 /* CokidoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6FE54EBC2681092200B29A48 /* CokidoApp.swift */; };
@@ -36,6 +37,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6F21654C2684C75700CB44A0 /* ActiviteDuree.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActiviteDuree.swift; sourceTree = "<group>"; };
 		6F98BD5A2683945D00BE1E2E /* Test.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Test.swift; sourceTree = "<group>"; };
 		6F98BD622683AEA900BE1E2E /* AnimationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AnimationView.swift; sourceTree = "<group>"; };
 		6FE54EB92681092200B29A48 /* Cokido.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Cokido.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -154,6 +156,7 @@
 				6FE54EE0268109D800B29A48 /* PageCompte.swift */,
 				6FE54EE1268109D800B29A48 /* Filtre.swift */,
 				6FF61EE0268325FF00E86AF6 /* SearchBarView.swift */,
+				6F21654C2684C75700CB44A0 /* ActiviteDuree.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -251,6 +254,7 @@
 				6FE54EF1268109D800B29A48 /* PageTest.swift in Sources */,
 				6FE54EF4268109D800B29A48 /* Filtre.swift in Sources */,
 				6F98BD632683AEA900BE1E2E /* AnimationView.swift in Sources */,
+				6F21654D2684C75700CB44A0 /* ActiviteDuree.swift in Sources */,
 				6F98BD5B2683945D00BE1E2E /* Test.swift in Sources */,
 				6FE54EF3268109D800B29A48 /* PageCompte.swift in Sources */,
 				6FE54EE3268109D800B29A48 /* Utilisateur.swift in Sources */,

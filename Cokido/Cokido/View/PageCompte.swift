@@ -48,9 +48,6 @@ struct PageCompte: View {
                                 ProfileLearnRow(profilType: type )
                             }
                             
-                            
-                            
-                            
                             Section(header: Text("Mon parcours").font(/*@START_MENU_TOKEN@*/.title/*@END_MENU_TOKEN@*/).fontWeight(.medium)){
                                 
                                 VStack(alignment: .leading){
@@ -58,16 +55,22 @@ struct PageCompte: View {
                                     Text("Aujourd'hui tu as fait: ").font(.title2).multilineTextAlignment(.leading).padding(10)
                                     
                                     ForEach(Type.allCases, id: \.self){ type in
-                                        Text("\(data.activites.filter({ $0.faite && $0.type == type }).count) activités \(type.rawValue)").padding(2)
+                                        let nbAct = data.activites.filter({ $0.faite && $0.type == type }).count
+                                        if nbAct > 1 {
+                                            Text("\(nbAct) activités du type \(type.rawValue)").padding(2)
+                                        } else {
+                                            Text("\(nbAct) activité du type \(type.rawValue)").padding(2)
+                                        }
                                     }
                                 }.frame(width: 350, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding().background(Rectangle().foregroundColor(Color("OrangeCokido")).cornerRadius(20).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)).padding()
                                 
                                 VStack(alignment: .leading){
                                     Text("Tu as passé: ").font(.title2).multilineTextAlignment(.leading)
                                         .padding(10)
-                                    Text(" 2 h  en activités Visuel").padding(2)
-                                    Text(" 3 h  en activités Kinethésique").padding(2)
-                                    Text(" 0 min  en activités Audif").padding(2)
+                                    
+                                  ActiviteDuree()
+                                    
+                                    
                                 }.frame(width: 350, height: 150, alignment: /*@START_MENU_TOKEN@*/.center/*@END_MENU_TOKEN@*/).padding()
                                 .background(Rectangle().foregroundColor(Color("VertCokido")).cornerRadius(20).shadow(color: Color.black.opacity(0.2), radius: 20, x: 0, y: 0)).padding()
                                 
@@ -80,10 +83,7 @@ struct PageCompte: View {
                                 // Bar Chart
                                 Section(header: Text("Dernière série : 5 jours")) {
                                     BarChartView(dataPoints: pointsV).padding()
-                                    
                                 }
-                                
-                                
                                 
                                 //Horizontal Bar
                                 // Section(header: Text("Horizontal Bar Chart")) {
@@ -92,7 +92,6 @@ struct PageCompte: View {
                                 
                                 
                             }
-                            
                             
                             Section {
                                 
@@ -117,11 +116,6 @@ struct PageCompte: View {
                         
                     }.padding()
                     
-                    
-                    
-                    
-                    
-                    
                 }.navigationTitle("Compte").navigationBarTitleDisplayMode(.inline)
                 VStack {
                     Spacer()
@@ -138,7 +132,6 @@ struct PageCompte: View {
                 
             }
         }
-        
     }
     //}
     //}
@@ -147,8 +140,4 @@ struct PageCompte: View {
             PageCompte( tabSelection: .constant(2)).environmentObject(Data())
         }
     }
-    
-    
 }
-
-

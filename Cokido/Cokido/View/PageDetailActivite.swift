@@ -134,7 +134,7 @@ struct PageDetailActivite: View {
                     }.padding()
                 }               // Bouton
                 
-                Button(action: {feedback.toggle()}, label: {
+                Button(action: {feedback.toggle(); data.activites[activiteIndex].faite = true}, label: {
                     Text("Noter mes obervations")
                         .padding()
                         .foregroundColor(.white)

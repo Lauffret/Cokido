@@ -18,7 +18,8 @@ final class Data:ObservableObject {
 var pateADessiner = Activite(
     imageActivite: "pateADessiner",
     titreActivite: "Pate à dessiner",
-    description: "Amusante et idéale pour dessiner sur les surfaces extérieures comme l’asphalte et le ciment. Cette pâte à dessiner est à mi-chemin entre la peinture et la pâte à jouer. Elle permet de créer des dessins amusants et texturés. \n\nCette recette donne suffisamment de pâte pour remplir environ 2 bouteilles comprimables. Il est préférable de la refaire plusieurs fois plutôt que de la doubler pour en avoir plus.",
+    description: "Amusante et idéale pour dessiner sur les surfaces extérieures comme l’asphalte et le ciment. Cette pâte à dessiner est à mi-chemin entre la peinture et la pâte à jouer. Elle permet de créer des dessins amusants et texturés. \n\nCette recette donne suffisamment de pâte pour remplir environ 2 bouteilles comprimables.",
+//    Il est préférable de la refaire plusieurs fois plutôt que de la doubler pour en avoir plus.",
     etapes: [
         "Mélanger tous les ingrédients (sauf la couleur) dans un bol. Le mélange doit être plutôt épais et juste assez liquide pour passer facilement dans la petite ouverture de la bouteille comprimable.",
         "Diviser le mélange en deux et ajouter une couleur différente à chaque portion. Bien remuer jusqu’à ce que la couleur soit uniforme",
@@ -37,7 +38,8 @@ var pateADessiner = Activite(
     inter: true,
     exter: false,
     favori: false,
-    apprentissage: "Cet atelier permet: \r - d'améliorer la concentration pendant un temps donné \r- d'aprendre à suivre des instruction dans un ordre chronologique \r\r Profil de compréhension: \r- Kinesthésique\r-Visuel",
+    apprentissage: "Cet atelier permet: \r - d'améliorer la concentration pendant un temps donné \r- d'aprendre à suivre des instruction dans un ordre chronologique",
+//    \r\r Profil de compréhension: \r- Kinesthésique\r-Visuel",
     faite: true,
     type: Type.Kinesthesique,
     prix: 10,
@@ -71,7 +73,8 @@ var feuillesFantomes = Activite(
     inter: true,
     exter: false,
     favori: false,
-    apprentissage: "Le projet des feuilles fantômes est idéal en automne, pour célébrer l’Halloween. La forme de certaines feuilles se prête très bien à la création des fantômes.",
+    apprentissage: "Le projet des feuilles fantômes est idéal en automne, pour célébrer l’Halloween.",
+//    La forme de certaines feuilles se prête très bien à la création des fantômes.",
     faite: true,
     type: Type.Visuel,
     prix: 10,
@@ -82,7 +85,8 @@ var feuillesFantomes = Activite(
 var respiration = Activite(
     imageActivite: "respiration",
     titreActivite: "Respiration consciente",
-    description: "La respiration est un acte si essentiel à la survie, mais oh! combien sous-estimé! On pense que respirer n’est bon que pour survivre, mais la respiration, c’est tellement plus que ça. Autant pour les adultes que pour les enfants, elle est utile pour calmer les émotions, connecter avec son ressenti ainsi que favoriser la concentration et l’attention en général. Quelques instants de respiration consciente peuvent rapidement changer l’énergie, l’ambiance et la dynamique.",
+    description: "La respiration est un acte si essentiel à la survie, mais oh! combien sous-estimé! On pense que respirer n’est bon que pour survivre, mais la respiration, c’est tellement plus que ça. Autant pour les adultes que pour les enfants, elle est utile pour calmer les émotions et se connecter avec son ressenti.",
+//    ainsi que favoriser la concentration et l’attention en général. Quelques instants de respiration consciente peuvent rapidement changer l’énergie, l’ambiance et la dynamique.",
     etapes: [
         "Prendre conscience de leur ventre qui se gonfle \r Cette semaine, commencez tout en douceur. En position couchée ou assise, aidez les enfants à prendre conscience de leur ventre qui se gonfle et se dégonfle pendant la respiration."," Demandez aux enfants de fermer les yeux et de déposer leurs mains sur leur ventre. ","Invitez-les à inspirer et à expirer profondément et aidez-les à remarquer les mouvements de leur ventre. Amenez tranquillement les enfants à ralentir leur respiration pour sentir avec leurs mains la différence dans les mouvements de leur corps. Répétez cet exercice à quelques reprises tous les jours de la semaine.",
         "Ancrage à la terre Pour cette deuxième semaine, ancrez les enfants à la terre avec la posture de l’arbre alliée au « flow » de leur respiration. Les enfants se placent debout et étirent les bras dans les airs. ","Les enfants commencent par prendre une grande respiration et ils expirent ensuite tout doucement. À la respiration suivante, ils bougent les bras tranquillement de gauche à droite, comme des branches d’un arbre dans le vent."," Encouragez-les à se balancer tout doucement, alliant à leurs mouvements une respiration lente afin de favoriser le calme.",
@@ -97,7 +101,9 @@ var respiration = Activite(
     inter: true,
     exter: true,
     favori: true,
-    apprentissage: "Avec les enfants, remarquez leur état avant et après les exercices afin de les aider à voir la différence. Les enfants prendront vite conscience qu’ils éprouvent un sentiment de bienêtre lorsqu’ils améliorent leur respiration.",
+    apprentissage: "Les enfants prendront vite conscience qu’ils éprouvent un sentiment de bienêtre lorsqu’ils améliorent leur respiration.",
+//    Avec les enfants, remarquez leur état avant et après les exercices afin de les aider à voir la différence.
+
     faite: false,
     type: Type.Auditif,
     prix: 0,
@@ -127,7 +133,7 @@ var papillons = Activite(
     inter: true,
     exter: false,
     favori: false,
-    apprentissage: "Vous comprendrez que les possibilités sont infinies! Plus vous dicterez les instructions rapidement, plus les enfants auront chaud! Amusez-vous à alterner entre des mouvements rapides et lents, entre des actions en hauteur et au sol.",
+    apprentissage: "Vous comprendrez que les possibilités sont infinies! Amusez-vous à alterner entre des mouvements rapides et lents, entre des actions en hauteur et au sol.",
     faite: true,
     type: Type.Kinesthesique,
     prix: 10,
@@ -156,7 +162,7 @@ var cocoColore = Activite(
     inter: false,
     exter: true,
     favori: false,
-    apprentissage: "Cette activité si simple fera bouger les enfants de différentes façons. En plus de courir pour récupérer les ballons dans le panier, ils s’étireront, s’accroupiront et activeront les muscles de leurs bras en frottant les ballons sur leurs jambes.",
+    apprentissage: "En plus de courir pour récupérer les ballons dans le panier, ils s’étireront, s’accroupiront et activeront les muscles de leurs bras en frottant les ballons sur leurs jambes.",
     faite: false,
     type: Type.Kinesthesique,
     prix: 14,
@@ -198,7 +204,8 @@ var flotteCoule = Activite(
     inter: true,
     exter: false,
     favori: false,
-    apprentissage: "Il n’y a pas une seule raison qui peut expliquer pourquoi un objet coule au fond ou reste à la surface de l’eau. Tu as surement remarqué que certains objets sont gros, mais flottent, tandis que d’autres sont petits, mais coulent au fond, ou que certains sont lourds et flottent (pense aux gros bateaux!) et d’autres son légers et coulent (un sou).",
+    apprentissage: "Il n’y a pas une seule raison qui peut expliquer pourquoi un objet coule au fond ou reste à la surface de l’eau.",
+//    Certains objets sont gros, mais flottent, tandis que d’autres sont petits, mais coulent au fond, ou que certains sont lourds et flottent (pense aux gros bateaux!) et d’autres son légers et coulent (un sou).",
     faite: false,
     type: Type.Visuel,
     prix: 10,
@@ -327,7 +334,7 @@ var question1 = Test(question: "Tu rencontres quelqu’un pour la première fois
 
 var question2 = Test(question:"Tu préfères quelle activité ?",reponse: [ [1 : ["2lire","Lire un livre"]] , [2 : ["2ecouter","Ecouter de la musique"]] , [ 3 : ["2dessin","Dessiner"]] ])
 
-var question3 = Test(question:"Quand je te dis : penses à un poussin. Qu’estce qui te vient en premier à l’esprit ?",reponse: [ [1 : ["3couleur","Sa couleur"]] , [2 : ["3piaille","Son piaillement"]] , [ 3 : ["3doux","Sa douceur"]] ])
+var question3 = Test(question:"Quand je te dis : penses à un poussin. Qu’est ce qui te vient en premier à l’esprit ?",reponse: [ [1 : ["3couleur","Sa couleur"]] , [2 : ["3piaille","Son piaillement"]] , [ 3 : ["3doux","Sa douceur"]] ])
 
 var question4 = Test(question:"Tu retiens plus facilement par coeur :",reponse: [ [1 : ["2lire","Quand tu lis un texte"]] , [2 : ["2ecouter","Quand tu entends une chanson"]] , [ 3 : ["sportco","Les mouvements d’une danse ou d’un sport"]] ])
 
