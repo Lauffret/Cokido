@@ -19,3 +19,8 @@ $ cd ../Cokido
 $ open Cokido.xcodeproj
 
 ```
+## Presentation
+
+Voici le lien de la vidéo de présentation de l'application.
+
+https://drive.google.com/file/d/1E7LvKxhPaS2xG3eGS97tQ5VvsVf5_8WW/view?usp=sharing
